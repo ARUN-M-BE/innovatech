@@ -1,13 +1,28 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react({
-      babel: {
-        plugins: [['babel-plugin-react-compiler']],
-      },
-    }),
-  ],
-})
+  plugins: [react(), tailwindcss()],
+  server: {
+    port: 5500,
+    strictPort: true,
+    hmr: {
+      protocol: 'ws',
+      host: 'localhost'
+    }
+  },
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        entryFileNames: 'assets/[name]-[hash].js'
+      }
+    }
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
+  },
+  base: './'
+});

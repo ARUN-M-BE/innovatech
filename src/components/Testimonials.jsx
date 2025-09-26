@@ -1,27 +1,34 @@
 // components/Testimonials.jsx
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { StarIcon } from '@heroicons/react/24/solid';
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { StarIcon } from "@heroicons/react/24/solid";
+import { User } from "../assets/image";
 
 const testimonials = [
   {
     id: 1,
-    quote: "Innovatech's custom software streamlined our entire workflow, saving us countless hours and boosting our productivity significantly. Their team was professional, responsive, and a pleasure to work with.",
+    quote:
+      "Innovatech's custom software streamlined our entire workflow, saving us countless hours and boosting our productivity significantly. Their team was professional, responsive, and a pleasure to work with.",
     author: "Jane Doe",
-    position: "CEO, TechCorp"
+    position: "CEO, TechCorp",
+    img: User,
   },
   {
     id: 2,
-    quote: "Migrating to the cloud was a daunting task, but innovatech made it seamless. Their expertise and support were invaluable, and we've seen a massive improvement in our system's performance and scalability.",
+    quote:
+      "Migrating to the cloud was a daunting task, but innovatech made it seamless. Their expertise and support were invaluable, and we've seen a massive improvement in our system's performance and scalability.",
     author: "John Smith",
-    position: "CTO, NextGen"
+    position: "CTO, NextGen",
+    img: User,
   },
   {
     id: 3,
-    quote: "The IT consulting from Innovatech has been a game-changer for us. Their strategic insights helped us optimize our IT infrastructure and align our technology with our business goals. Highly recommended!",
+    quote:
+      "The IT consulting from Innovatech has been a game-changer for us. Their strategic insights helped us optimize our IT infrastructure and align our technology with our business goals. Highly recommended!",
     author: "Samuel Green",
-    position: "IT Director, HealthFirst"
-  }
+    position: "IT Director, HealthFirst",
+    img: User,
+  },
 ];
 
 const Testimonials = () => {
@@ -39,9 +46,12 @@ const Testimonials = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-          <p className="text-xl text-gray-600">Hear from businesses who have transformed with Innovatech Solutions.</p>
-          {/* <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div> */}
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            What Our Clients Say
+          </h2>
+          <p className="text-xl text-gray-600">
+            Hear from businesses who have transformed with Innovatech Solutions.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -59,9 +69,18 @@ const Testimonials = () => {
                 ))}
               </div>
               <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
-              <div>
-                <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                <p className="text-blue-600">{testimonial.position}</p>
+              <div className="flex items-center space-x-4">
+                <img
+                  src={testimonial.img}
+                  alt={testimonial.author}
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-gray-900">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-blue-600">{testimonial.position}</p>
+                </div>
               </div>
             </motion.div>
           ))}

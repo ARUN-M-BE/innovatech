@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Logo } from "../assets/image";
 import { motion } from 'framer-motion';
-import { ChevronRightIcon } from '@heroicons/react/24/outline';
 
 
 const Header = () => {

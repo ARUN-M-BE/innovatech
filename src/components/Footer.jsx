@@ -15,8 +15,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center pb-6 mb-6">
           {/* Logo and Name */}
           <div className="flex items-center gap-3 mb-4 md:mb-0 text-center text-sm text-gray-800">
-            <a href="http://example.com">privacy & policy</a>
-            <a href="http://example.com">Terms and condition</a>
+            <a href="http://example.com">Privacy & Policy</a>
+            <a href="http://example.com">Terms of Service</a>
           </div>
 
           {/* Social Media Links */}

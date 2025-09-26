@@ -9,7 +9,7 @@ const App = () => {
     <AnimatePresence mode="wait">
       <div className="bg-primary min-h-screen w-full flex justify-center items-center dark:bg-gray-900 dark:text-white">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/*" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

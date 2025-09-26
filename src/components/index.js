@@ -3,3 +3,8 @@ export { default as Header } from "./Header";
 export { default as Contact } from "./Contact";
 export { default as Footer } from "./Footer";
 export { default as NotFound } from "./NotFound";
+export { default as HeroSection } from "./HeroSection";
+export { default as WhatWeDo } from "./WhatWeDo";
+export { default as Testimonials } from "./Testimonials";
+export { default as Services } from "./Services";
+export { default as Map } from "./Map";

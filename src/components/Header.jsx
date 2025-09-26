@@ -60,7 +60,20 @@ const Header = () => {
           <NavLink to="/Services" onClick={() => setMobileMenuOpen(false)}>Services</NavLink>
           <NavLink to="/about" onClick={() => setMobileMenuOpen(false)}>About</NavLink>
           <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</NavLink>
-          <button to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</button>
+          <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 inline-flex items-center group"
+          >
+            Get Started
+          </motion.button>
+        </motion.div>
         </nav>
       )}
     </header>
